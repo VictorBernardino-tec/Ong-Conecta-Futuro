@@ -1,0 +1,44 @@
+:root {
+    /*cores*/
+    --cor-primaria: #1565c0;
+    --cor-primaria-escura: #0d47a1;
+
+    --cor-secundaria: #00897b;
+    --cor-secundaria-clara: #4db6ac;
+
+    --cor-destaque: #f9a825;
+
+    --cor-fundo: #f5f7fa;
+    --cor-superficie: #ffffff;
+
+    --cor-texto: #1f2937;
+    --cor-texto-suave: #6b7280;
+
+    --cor-borda: #d1d5db;
+  
+    /*tipografia-fontes*/
+    
+    /*--fonte-xs  → texto pequeno
+    --fonte-sm  → texto padrão
+    --fonte-md  → subtítulos
+    --fonte-lg  → títulos de seção
+    --fonte-xl  → título principal */
+    
+    --fonte-xs: 0.875rem;    
+    --fonte-sm: 1rem;
+    --fonte-md: 1.25rem;
+    --fonte-lg: 1.75rem;
+    --fonte-xl: 2.5rem;
+   
+     /* Espaçamentos */
+    --espaco-xs: 0.5rem;
+    --espaco-sm: 1rem;
+    --espaco-md: 1.5rem;
+    --espaco-lg: 2rem;
+    --espaco-xl: 3rem;
+
+}
+body{
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+}
