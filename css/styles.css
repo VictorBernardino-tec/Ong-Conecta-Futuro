@@ -82,6 +82,11 @@ gap
     align-items: center;
     gap: var(--espaco-md);
 }
+nav{
+    display: none;
+}
+.nav.ativo{
+    display: flex;}
  header{
     
     display: flex;
@@ -136,8 +141,17 @@ O de 400px reduz ainda mais a tipografia geral e o espaçamento.*/
         grid-column: span 12;
     }
 
+    .menu-toggle {
+        display: block;
+    }
+
     nav {
+        display: none;
         flex-direction: column;
+    }
+
+    nav.ativo {
+        display: flex;
     }
 }
 
@@ -159,4 +173,11 @@ O de 400px reduz ainda mais a tipografia geral e o espaçamento.*/
     main {
         padding: var(--espaco-sm);
     }
+}
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
