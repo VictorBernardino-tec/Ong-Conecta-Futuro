@@ -87,6 +87,65 @@ gap
     grid-template-columns: repeat(12, 1fr);
     gap: var(--espaco-md);
 }
-.card-projeto{
+.card-projeto {
     grid-column: span 4;
+    DISPLAY: flex;
+    flex-direction: column;
+    background-color: var(--cor-superficie);
+    padding: var(--espaco-md);
+    border: 1px solid var(--cor-borda);
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+}
+.card-projeto h3 {
+    color: var(--cor-primaria);
+}
+/*Quando a largura da tela for de no máximo 768px,
+ aplique estas regras.”*/
+
+ /*O de 1200px reduz o espaço interno do conteúdo.
+O de 1024px faz os cards ocuparem 6 colunas, ficando 2 por linha.
+O de 768px faz os cards ocuparem 12 colunas e muda o menu para coluna.
+O de 576px reduz os títulos.
+O de 400px reduz ainda mais a tipografia geral e o espaçamento.*/
+@media (max-width: 1200px) {
+    main {
+        padding: var(--espaco-lg);
+    }
+}
+
+@media (max-width: 1024px) {
+    .card-projeto {
+        grid-column: span 6;
+    }
+}
+
+@media (max-width: 768px) {
+    .card-projeto {
+        grid-column: span 12;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: var(--fonte-lg);
+    }
+
+    h2 {
+        font-size: var(--fonte-md);
+    }
+}
+
+@media (max-width: 400px) {
+    body {
+        font-size: var(--fonte-xs);
+    }
+
+    main {
+        padding: var(--espaco-sm);
+    }
 }
