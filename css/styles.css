@@ -82,7 +82,18 @@ gap
     align-items: center;
     gap: var(--espaco-md);
 }
+ header{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--espaco-sm);
+    padding: var(--espaco-md);
+}
+ 
 .grid-projetos{
+    /*Grid posiciona os três cards na página. 
+    Flexbox organiza os elementos internos de cada card.*/
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: var(--espaco-md);
