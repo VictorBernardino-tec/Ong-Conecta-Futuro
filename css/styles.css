@@ -82,8 +82,35 @@ gap
     align-items: center;
     gap: var(--espaco-md);
 }
+nav a{
+    color: var(--cor-primaria);
+    text-decoration: none;
+    font-size: var(--fonte-sm);
+    font-weight: 600;
+    padding: var(--espaco-xs) var(--espaco-sm);
+    border-radius: 0.5rem; 
+    transition: background-color 0.3s, color 0.3s;
+}
+nav a:hover {
+    background-color: var(--cor-primaria);
+    color: var(--cor-superficie);
+}
 .menu-toggle {
     display: none;
+    background-color: var(--cor-primaria);
+    color: var(--cor-superficie);
+    border: none;
+    border-radius: 0.5rem;
+    padding: var(--espaco-xs) var(--espaco-sm);
+    font-size: var(--fonte-md);
+    cursor: pointer;
+}
+.menu-toggle:hover {
+    background-color: var(--cor-primaria-escura);
+}
+.menu-toggle:focus-visible {
+    outline: 3px solid var(--cor-destaque);
+    outline-offset: 3px;
 }
 
 
