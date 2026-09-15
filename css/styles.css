@@ -95,6 +95,10 @@ nav a:hover {
     background-color: var(--cor-primaria);
     color: var(--cor-superficie);
 }
+nav a:focus-visible {
+    outline: 3px solid var(--cor-destaque);
+    outline-offset: 2px;
+}
 .menu-toggle {
     display: none;
     background-color: var(--cor-primaria);
