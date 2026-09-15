@@ -17,11 +17,21 @@
             aria-controls="menu-principal">
         ☰
     </button>
-     <nav id="menu-principal">
-        <a href="index.html">Início</a>
-        <a href="projetos.html">Projetos</a>
-        <a href="cadastro.html">Cadastro</a>
-     </nav>
+  <nav id="menu-principal">
+    <a href="index.html">Início</a>
+
+    <div class="dropdown">
+        <a href="projetos.html">Projetos ▼</a>
+
+        <div class="submenu">
+            <a href="projetos.html#inclusao">Inclusão Digital</a>
+            <a href="projetos.html#capacitacao">Capacitação Profissional</a>
+            <a href="projetos.html#educacao">Educação para Todos</a>
+        </div>
+    </div>
+
+    <a href="cadastro.html">Cadastro</a>
+</nav>
 </header>
 <main>
 
@@ -89,5 +99,9 @@
     </form>
 
 </main>
+  <footer>
+      <p>&copy; ONG Conecta Futuro - Desenvolvido  para fins educacionais.</p>
+      </footer>
+<script src="../js/script.js"></script>
 </body>
 </html>

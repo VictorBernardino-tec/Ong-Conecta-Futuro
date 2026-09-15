@@ -5,3 +5,13 @@ botaoMenu.addEventListener("click", function () {
     const menuAberto = menu.classList.contains("ativo");
     botaoMenu.setAttribute("aria-expanded", menuAberto);
 });
+const botaoDropdown = document.querySelector(".dropdown-toggle");
+const dropdown = document.querySelector(".dropdown");
+
+botaoDropdown.addEventListener("click", function () {
+    dropdown.classList.toggle("aberto");
+
+    const dropdownAberto = dropdown.classList.contains("aberto");
+
+    botaoDropdown.setAttribute("aria-expanded", dropdownAberto);
+});

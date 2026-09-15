@@ -147,6 +147,34 @@ nav a:focus-visible {
 .card-projeto h3 {
     color: var(--cor-primaria);
 }
+ .dropdown {
+    position: relative;
+ }
+ .submenu {
+    display: none;;
+    position: absolute;
+    top: 100%;
+    left: 0%;
+
+    background-color: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    border-radius: 0.5rem;
+    padding: var(--espaco-xs);
+    min-width: 220px;
+ }
+ .submenu a {
+    display: block;
+ }
+.dropdown:hover .submenu {
+    display: block;
+}
+.dropdown:focus-within .submenu {
+    display: block;
+}
+
+
+
+
 /*Quando a largura da tela for de no máximo 768px,
  aplique estas regras.”*/
 
@@ -169,6 +197,7 @@ O de 400px reduz ainda mais a tipografia geral e o espaçamento.*/
 }
 
 @media (max-width: 768px) {
+
     .card-projeto {
         grid-column: span 12;
     }
@@ -184,6 +213,26 @@ O de 400px reduz ainda mais a tipografia geral e o espaçamento.*/
 
     nav.ativo {
         display: flex;
+    }
+
+    .dropdown {
+        width: 100%;
+    }
+
+    .submenu {
+        position: static;
+        min-width: auto;
+        margin-top: var(--espaco-xs);
+    }
+
+    /* No mobile, hover não controla o submenu */
+    .dropdown:hover .submenu {
+        display: none;
+    }
+
+    /* No mobile, JavaScript controla o submenu */
+    .dropdown.aberto .submenu {
+        display: block;
     }
 }
 
