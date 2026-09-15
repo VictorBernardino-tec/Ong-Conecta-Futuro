@@ -15,3 +15,16 @@ botaoDropdown.addEventListener("click", function () {
 
     botaoDropdown.setAttribute("aria-expanded", dropdownAberto);
 });
+const formulario = document.querySelector("form");
+const toastSucesso = document.querySelector("#toast-sucesso");
+
+
+formulario.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    toastSucesso.classList.add("ativo");
+
+    setTimeout(function () {
+        toastSucesso.classList.remove("ativo");
+    }, 3000);
+});

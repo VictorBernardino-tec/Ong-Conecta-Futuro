@@ -21,11 +21,26 @@
             aria-controls="menu-principal">
         ☰
     </button>
-     <nav id="menu-principal">
-        <a href="index.html">Início</a>
-        <a href="projetos.html">Projetos</a>
-        <a href="cadastro.html">Cadastro</a>
-     </nav>
+  <nav id="menu-principal">
+    <a href="index.html">Início</a>
+
+    <div class="dropdown">
+        <button
+            class="dropdown-toggle"
+            type="button"
+            aria-expanded="false">
+            Projetos ▼
+        </button>
+
+        <div class="submenu">
+            <a href="projetos.html#inclusao">Inclusão Digital</a>
+            <a href="projetos.html#capacitacao">Capacitação Profissional</a>
+            <a href="projetos.html#educacao">Educação para Todos</a>
+        </div>
+    </div>
+
+    <a href="cadastro.html">Cadastro</a>
+</nav>
     </header>
 
     <main>
@@ -34,14 +49,17 @@
             <div class="grid-projetos">
             <article class="card-projeto" id="inclusao">
                 <h3>Inclusão Digital</h3>
+                <span class="badge">Tecnologia</span>
                 <p>Oferece acesso à tecnologia e conhecimentos básicos de informática.</p>
             </article>
             <article class="card-projeto" id="capacitacao">
                 <h3>Capacitação Profissional</h3>
+                <span class="badge">Empregabilidade</span>
                 <p> Oferece capacitação para ajudar jovens e adultos na preparação para o mercado de trabalho.</p>
             </article>
             <article class="card-projeto" id="educacao">
                 <h3>Educação para Todos</h3>
+                <span class="badge">Educação</span>
                 <p> Promove atividades educacionais e apoio ao aprendizado de pessoas em situação de vulnerabilidade.</p>
             </article>
             <article class="card-projeto" >

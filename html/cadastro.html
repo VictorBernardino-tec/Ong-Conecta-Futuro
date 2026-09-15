@@ -21,7 +21,12 @@
     <a href="index.html">Início</a>
 
     <div class="dropdown">
-        <a href="projetos.html">Projetos ▼</a>
+        <button
+            class="dropdown-toggle"
+            type="button"
+            aria-expanded="false">
+            Projetos ▼
+        </button>
 
         <div class="submenu">
             <a href="projetos.html#inclusao">Inclusão Digital</a>
@@ -94,9 +99,13 @@
             </select>
 
         </fieldset>
-        <button type="submit">Enviar cadastro</button>
+        <button type="submit" class="btn-enviar">Enviar cadastro</button>
 
     </form>
+    <div class="toast" id="toast-sucesso" role="status" aria-live="polite">
+    <strong>✓ Cadastro enviado com sucesso!</strong>
+    <p>Obrigado por participar da ONG Conecta Futuro.</p>
+</div>
 
 </main>
   <footer>
