@@ -82,11 +82,11 @@ gap
     align-items: center;
     gap: var(--espaco-md);
 }
-nav{
+.menu-toggle {
     display: none;
 }
-.nav.ativo{
-    display: flex;}
+
+
  header{
     
     display: flex;
@@ -105,13 +105,13 @@ nav{
 }
 .card-projeto {
     grid-column: span 4;
-    DISPLAY: flex;
+    display: flex;
     flex-direction: column;
     background-color: var(--cor-superficie);
     padding: var(--espaco-md);
     border: 1px solid var(--cor-borda);
     border-radius: 0.5rem;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 .card-projeto h3 {
     color: var(--cor-primaria);
@@ -124,6 +124,7 @@ O de 1024px faz os cards ocuparem 6 colunas, ficando 2 por linha.
 O de 768px faz os cards ocuparem 12 colunas e muda o menu para coluna.
 O de 576px reduz os títulos.
 O de 400px reduz ainda mais a tipografia geral e o espaçamento.*/
+
 @media (max-width: 1200px) {
     main {
         padding: var(--espaco-lg);
@@ -173,11 +174,4 @@ O de 400px reduz ainda mais a tipografia geral e o espaçamento.*/
     main {
         padding: var(--espaco-sm);
     }
-}
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
 }
