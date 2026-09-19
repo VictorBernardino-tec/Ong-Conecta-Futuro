@@ -153,7 +153,7 @@ nav a:focus-visible {
     position: relative;
  }
  .submenu {
-    display: none;;
+    display: none;
     position: absolute;
     top: 100%;
     left: 0%;
@@ -307,34 +307,6 @@ O de 400px reduz ainda mais a tipografia geral e o espaçamento.*/
 .btn-enviar:disabled {
     opacity: 0.5;
     cursor: not-allowed;
-}.btn-enviar {
-    background-color: var(--cor-secundaria);
-    color: var(--cor-superficie);
-    border: none;
-    border-radius: 0.5rem;
-    padding: var(--espaco-sm) var(--espaco-md);
-    font-size: var(--fonte-sm);
-    cursor: pointer;
-
-    transition: background-color 0.3s, transform 0.2s, opacity 0.3s;
-}
-
-.btn-enviar:hover {
-    background-color: var(--cor-primaria-escura);
-}
-
-.btn-enviar:focus-visible {
-    outline: 3px solid var(--cor-destaque);
-    outline-offset: 3px;
-}
-
-.btn-enviar:active {
-    transform: scale(0.96);
-}
-
-.btn-enviar:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
 }
 
 input:user-valid,
@@ -388,4 +360,122 @@ Campo em foco
     display: block;
     color: #c62828;
     margin-top: 0.25rem;
+}
+
+/* CADASTRO: :has() seleciona o main somente quando contém o formulário.
+   Funciona também quando a SPA troca as páginas. O padding cria uma margem
+   interna ao redor do cartão para ele não encostar nas laterais do celular. */
+main:has(#form-cadastro) {
+    background: #f0f2f5;
+    padding: 32px 16px;
+}
+
+/* O título está fora do formulário no HTML, por isso é centralizado à parte. */
+main:has(#form-cadastro) > h2 {
+    text-align: center;
+    margin: 0 0 24px;
+}
+
+/* CARTÃO: width acompanha a tela; max-width limita a largura a 400px.
+   margin: 0 auto distribui igualmente o espaço à esquerda e à direita.
+   border-box inclui padding e bordas na largura total, evitando overflow.
+   A altura é automática para acomodar todos os campos e mensagens de erro. */
+#form-cadastro {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 24px; /* Distância entre o conteúdo e as bordas do cartão. */
+    background: var(--cor-superficie);
+    border-radius: 8px; /* Arredonda os cantos; valores não nulos precisam de unidade. */
+    box-shadow: 0 2px 12px rgb(0 0 0 / 15%); /* Deslocamento X, Y, desfoque e cor. */
+}
+
+/* Fieldset agrupa os campos relacionados. Removemos sua borda padrão.
+   min-width: 0 permite que o grupo encolha sem alargar o cartão no celular. */
+#form-cadastro fieldset {
+    min-width: 0;
+    margin: 0 0 20px;
+    padding: 0;
+    border: none;
+}
+
+/* Legend é o título de cada grupo, como Dados pessoais e Endereço. */
+#form-cadastro legend {
+    padding: 0;
+    margin-bottom: 8px;
+    color: var(--cor-primaria-escura);
+    font-weight: 700;
+}
+
+/* Display block coloca cada rótulo em uma linha própria, acima do campo. */
+#form-cadastro label {
+    display: block;
+    margin: 12px 0 6px;
+    font-weight: 600;
+}
+
+/* CAMPOS: ocupam a largura interna do cartão. Font inherit usa a fonte do pai.
+   A borda sempre tem 2px para não mudar de tamanho durante a validação.
+   O contorno de foco continua vindo da regra input:focus/select:focus acima. */
+#form-cadastro input,
+#form-cadastro select {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    padding: 12px;
+    border: 2px solid var(--cor-borda);
+    border-radius: 6px;
+    background: var(--cor-superficie);
+    color: var(--cor-texto);
+    font: inherit;
+}
+
+/* O seletor com ID tem prioridade sobre as classes gerais anteriores.
+   Estas regras garantem que a borda padrão não esconda a validação do JS. */
+#form-cadastro .campo-sucesso {
+    border-color: #2e7d32;
+}
+
+#form-cadastro .campo-erro {
+    border-color: #c62828;
+}
+
+/* Permite quebrar mensagens compridas sem ultrapassar a largura do cartão. */
+#form-cadastro .mensagem-erro {
+    font-size: var(--fonte-xs);
+    overflow-wrap: anywhere;
+}
+
+/* Herda cursor, transição e foco da regra geral .btn-enviar, sem duplicá-los.
+   Aqui personalizamos apenas o tamanho e a aparência do botão do cadastro. */
+#form-cadastro .btn-enviar {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--cor-primaria-escura);
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* O ID também no hover garante prioridade sobre a cor normal do botão. */
+#form-cadastro .btn-enviar:hover {
+    background-color: var(--cor-primaria);
+}
+
+/* O aviso fica fora do form. Sua largura e centralização acompanham o cartão.
+   Display continua controlado por .toast e .toast.ativo, acionados pelo JS. */
+main:has(#form-cadastro) > .toast {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 400px;
+    margin: 24px auto 0;
+    overflow-wrap: anywhere;
+}
+
+/* Em celulares estreitos, reduz o espaço interno para dar espaço aos campos. */
+@media (max-width: 400px) {
+    #form-cadastro {
+        padding: 16px;
+    }
 }
