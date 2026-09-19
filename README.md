@@ -1,4 +1,4 @@
-﻿# ONG Conecta Futuro — Projeto acadêmico
+# ONG Conecta Futuro — Projeto acadêmico
 
 Site desenvolvido como atividade prática de desenvolvimento web, com foco em estruturação de páginas, estilização responsiva e interatividade no navegador.
 
@@ -80,10 +80,10 @@ Esses recursos fazem parte do exercício de aprendizagem; o projeto ainda não p
 
 1. Baixe ou clone este repositório para o computador.
 2. Mantenha a estrutura das pastas para preservar os caminhos dos arquivos.
-3. Abra o arquivo `html/index.html` em um navegador atualizado.
+3. Inicie um servidor local, por exemplo com a extensão Live Server do VS Code, e abra `html/index.html` por HTTP. Os módulos JavaScript precisam de um servidor local.
 4. Utilize o menu para acessar as páginas de projetos e cadastro.
 
-Não é necessário instalar dependências. Opcionalmente, é possível abrir o projeto no Visual Studio Code e utilizar um servidor local, como a extensão Live Server.
+Não é necessário instalar dependências. Os módulos JavaScript requerem um servidor local, como o Live Server.
 
 ## Roteiro de verificação manual
 
@@ -104,7 +104,7 @@ O projeto não possui uma suíte automatizada de testes. Revisões de responsivi
 
 ## Possíveis melhorias
 
-- Revisar o JavaScript compartilhado para verificar a existência dos elementos antes de registrar eventos em cada página.
+- Ampliar a verificação manual das rotas e dos formulários.
 - Ampliar a verificação de navegação por teclado e de estados dos menus.
 - Refinar a apresentação dos formulários e o comportamento das imagens em telas pequenas.
 - Consolidar regras CSS repetidas e padronizar a formatação do código.
@@ -113,3 +113,13 @@ O projeto não possui uma suíte automatizada de testes. Revisões de responsivi
 ## Natureza acadêmica
 
 Este repositório documenta uma atividade prática e a evolução dos conhecimentos em desenvolvimento web. **A ONG Conecta Futuro é fictícia e todo o cenário institucional foi utilizado para fins educacionais.**
+
+## Integração com a SPA
+
+A navegação usa as rotas `#/inicio`, `#/projetos` e `#/cadastro`, incluindo âncoras como `#/projetos/inclusao`, sem recarregar a página. Os endereços HTML anteriores continuam disponíveis.
+
+O cadastro mantém seus campos e valida os formatos existentes, com mensagens por campo. Somente nome e e-mail são salvos no localStorage e recuperados ao retornar ao cadastro. A confirmação usa o toast do próprio site. Não há envio a um servidor.
+
+Os módulos `validacao.js` e `storage.js` concentram a validação de e-mail e a persistência. O arquivo `paginas.js` contém o conteúdo das rotas; ao alterar esse conteúdo, mantenha as páginas HTML correspondentes atualizadas.
+
+Para verificar: navegue pelos menus e pelo histórico do navegador; abra links antigos de projetos; envie campos inválidos; preencha um cadastro fictício válido e retorne ao cadastro após recarregar para conferir nome e e-mail.

@@ -376,3 +376,16 @@ Campo em foco
     font-weight: 600;
     margin-bottom: var(--espaco-sm);
 }
+.campo-erro {
+    border: 2px solid #c62828;
+}
+
+.campo-sucesso {
+    border: 2px solid #2e7d32;
+}
+
+.mensagem-erro {
+    display: block;
+    color: #c62828;
+    margin-top: 0.25rem;
+}
